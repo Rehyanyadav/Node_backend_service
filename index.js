@@ -1,8 +1,9 @@
 // My first Server 
-
+require ('dotenv').config()
 const express = require('express')
 
 const app = express()
+
 const port = 4000
 
 app.get('/', (req, res) => {
@@ -12,10 +13,17 @@ app.get('/twitter',(req,res)=>{
     res.send('rehyanyadav')
 
 })
+
+app.get('/youtube',(req,res)=>{
+  res.send('<h2>youtube page by rehyan yadav</h2>')
+})
 app.get('/login',(req,res)=>{
+  
     res.send('<h1>login page by rehyan yadav</h1>') 
 })
-app.listen(port, () => {
+
+
+app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${port}`)
 
 })
